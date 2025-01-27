@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Learning Zone</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="dna-icon">🧬</span> 3D Learning Zone
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Learning made easy</h1>
+            <p>Innovative educational platform designed to teach students about
+                the human body's sensory organs through interactive 3D models, quizzes, storyline and with a parent's dashboard.</p>
+            <div class="hero-buttons">
+                <a href="{% url 'login' %}" class="primary-btn">Start Exploring</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-model">
+                <img src="{% static 'images/vector.png' %}" alt="3D Anatomy Model">
+                <div class="pulse-effect"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <h2>Why Learn With 3D Models?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>360° Rotation</h3>
+                <p>Examine anatomical structures from every angle with fully rotatable 3D models.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Layer Navigation</h3>
+                <p>Explore different layers of anatomy from skin to bones with our layering system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Interactive Learning</h3>
+                <p>Click on any structure to learn more about its function and relationships.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="models">
+        <h2>Featured 3D Models</h2>
+        <div class="model-grid">
+            <div class="model-card">
+                <img src="{% static 'images/brain.jpg' %}" alt="Nervous System">
+                <div class="model-content">
+                    <span class="model-tag">Interactive 3D</span> 
+                    <h3>Brain & Nerves</h3>
+                    <p>Detailed neural pathways and brain structure exploration.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <img src="{% static 'images/heart.jpg' %}" alt="Heart">
+                <div class="model-content">
+                    <span class="model-tag">Interactive 3D</span> 
+                    <h3>Heart</h3>
+                    <p>Monitor cardiovascular health and explore heart structures.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <img src="{% static 'images/lungs.jpg' %}" alt="Lungs">
+                <div class="model-content">
+                    <span class="model-tag">Interactive 3D</span> 
+                    <h3>Lungs</h3>
+                    <p>Track respiratory function and examine lung anatomy.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <img src="{% static 'images/liver.jpg' %}" alt="Liver">
+                <div class="model-content">
+                    <span class="model-tag">Interactive 3D</span> 
+                    <h3>Liver</h3>
+                    <p>Evaluate hepatic performance and liver structure.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <img src="{% static 'images/kidney.jpg' %}" alt="Kidney">
+                <div class="model-content">
+                    <span class="model-tag">Interactive 3D</span> 
+                    <h3>Kidney</h3>
+                    <p>Understand renal function and kidney anatomy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta"> 
+        <div class="dna-animation"></div>
+        <h2>Ready to Transform Your Anatomy Learning?</h2>
+        <a href="{% url 'login' %}" class="primary-btn">Get Started</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>3D Learning Zone</h3>
+                <p>Advanced 3D anatomy learning platform for better student visualisation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul> 
+                    <li><a href="{% url 'information' %}">Organs</a></li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

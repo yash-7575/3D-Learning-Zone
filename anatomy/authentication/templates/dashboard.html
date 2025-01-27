@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Organ Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+</head>
+<body>
+    <div class="main-content">
+        <div class="header-container">
+            <div class="header">
+                <h1>3D Learning Zone Dashboard</h1>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 10px; font-size: 1.1em;">
+                    Explore interactive 3D models and enhance your understanding of human Organs
+                </p>
+            </div>
+            <img src="{% static 'images/header.gif' %}" alt="Organ Animation" class="header-gif">
+        </div>
+        <div class="organ-grid">
+            <div class="organ-card">
+                <img src="{% static 'images/heart.jpg' %}" alt="Heart">
+                <div class="organ-content">
+                    <h3>Heart</h3>
+                    <p>Monitor cardiovascular health and explore heart structures.</p>
+                    <a href="{% url 'heart-model' %}" class="organ-btn">View Model</a>
+                    <a href="{% url 'heart-quiz' %}" class="quiz-btn">Take Quiz</a>
+                </div>
+            </div>
+            <div class="organ-card">
+                <img src="{% static 'images/lungs.jpg' %}" alt="Lungs">
+                <div class="organ-content">
+                    <h3>Lungs</h3>
+                    <p>Track respiratory function and examine lung anatomy.</p>
+                    <a href="{% url 'lungs-model' %}" class="organ-btn">View Model</a>
+                    <a href="#lungs-quiz" class="quiz-btn">Take Quiz</a>
+                </div>
+            </div>
+            <div class="organ-card">
+                <img src="{% static 'images/brain.jpg' %}" alt="Brain">
+                <div class="organ-content">
+                    <h3>Brain</h3>
+                    <p>Assess neurological activity and explore brain regions.</p>
+                    <a href="{% url 'brain-model' %}" class="organ-btn">View Model</a>
+                    <a href="#brain-quiz" class="quiz-btn">Take Quiz</a>
+                </div>
+            </div>
+            <div class="organ-card">
+                <img src="{% static 'images/liver.jpg' %}" alt="Liver">
+                <div class="organ-content">
+                    <h3>Liver</h3>
+                    <p>Evaluate hepatic performance and liver structure.</p>
+                    <a href="{% url 'liver-model' %}" class="organ-btn">View Model</a>
+                    <a href="#liver-quiz" class="quiz-btn">Take Quiz</a>
+                </div>
+            </div>
+            <div class="organ-card">
+                <img src="{% static 'images/kidney.jpg' %}" alt="Kidneys">
+                <div class="organ-content">
+                    <h3>Kidneys</h3>
+                    <p>Analyze renal function and kidney anatomy.</p>
+                    <a href="{% url 'kidney-model' %}" class="organ-btn">View Model</a>
+                    <a href="#kidneys-quiz" class="quiz-btn">Take Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
