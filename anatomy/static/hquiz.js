@@ -140,12 +140,38 @@ submitBtn.addEventListener('click', () => {
     scoreEl.textContent = score;
     totalEl.textContent = quizData.length;
     resultsEl.style.display = 'block';
-    
+
     // Disable all interactions
     optionsEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
     submitBtn.disabled = true;
     prevBtn.disabled = true;
+
+    // Send score to Django backend
+    fetch('/login/submit-score/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken() // Ensure CSRF token is included
+        },
+        body: JSON.stringify({
+            username: "test_user",  // Replace with dynamic username if available
+            score: score
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Score submitted:', data);
+    })
+    .catch(error => console.error('Error:', error));
 });
+
+// Function to get CSRF token
+function getCSRFToken() {
+    return document.cookie.split('; ')
+        .find(row => row.startsWith('csrftoken'))
+        ?.split('=')[1];
+}
+
 
 // Start the quiz
 loadQuestion();
