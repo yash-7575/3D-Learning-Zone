@@ -21,9 +21,21 @@ def KidneyModelView(request):
 def LungsModelView(request):
     return render(request, 'lungs.html')
 def HeartQuizView(request):
-    return render(request, 'hquiz.html')
+    return render(request, 'heartquiz.html')
 def BrainQuizView(request):
     return render(request, 'brainquiz.html')
+
+def HeartQuizView(request):
+    return render(request, 'heartquiz.html')
+
+def LiverQuizView(request):
+    return render(request, 'liverquiz.html')
+
+def KidneyQuizView(request):
+    return render(request, 'kidneyquiz.html')
+
+def LungsQuizView(request):
+    return render(request, 'lungsquiz.html')
 
 @csrf_protect
 def RegisterView(request):

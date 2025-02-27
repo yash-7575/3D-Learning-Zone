@@ -11,8 +11,11 @@ urlpatterns = [
     path('liver-model/', views.LiverModelView, name='liver-model'),
     path('kidney-model/', views.KidneyModelView, name='kidney-model'),
     path('lungs-model/', views.LungsModelView, name='lungs-model'),
-    path('heart-quiz/', views.HeartQuizView, name='heart-quiz'),
     path('submit-score/', views.submit_score, name='submit_score'),
     path('leaderboard/', views.leaderboard, name='leaderboard'),
     path('brain-quiz/', views.BrainQuizView, name='brain-quiz'),
+    path('heart-quiz/', views.HeartQuizView, name='heart-quiz'),
+    path('liver-quiz/', views.LiverQuizView, name='liver-quiz'),
+    path('kidney-quiz/', views.KidneyQuizView, name='kidney-quiz'),
+    path('lungs-quiz/', views.LungsQuizView, name='lungs-quiz'),
 ]
