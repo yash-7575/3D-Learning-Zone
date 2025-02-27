@@ -12,4 +12,5 @@ urlpatterns = [
     path('kidney-model/', views.KidneyModelView, name='kidney-model'),
     path('lungs-model/', views.LungsModelView, name='lungs-model'),
     path('heart-quiz/', views.HeartQuizView, name='heart-quiz'),
+    path('brain-quiz/', views.BrainQuizView, name='brain-quiz'),
 ]

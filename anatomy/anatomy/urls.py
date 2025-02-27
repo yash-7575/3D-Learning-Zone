@@ -23,6 +23,7 @@ import authentication.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include(myapp.urls)),
-    path('login/',include(authentication.urls))
+    path('login/',include(authentication.urls)),
+    path('d/<hello>', include(myapp.urls))
 
 ]

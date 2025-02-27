@@ -17,6 +17,9 @@ def LungsModelView(request):
     return render(request, 'lungs.html')
 def HeartQuizView(request):
     return render(request, 'hquiz.html')
+def BrainQuizView(request):
+    return render(request, 'brainquiz.html')
+
 @csrf_protect
 def RegisterView(request):
     if request.method == "POST":
