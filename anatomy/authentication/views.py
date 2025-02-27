@@ -4,6 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Leaderboard
+
 
 def HeartModelView(request):
     return render(request, 'heart.html')
@@ -82,3 +87,20 @@ def LogoutView(request):
 @login_required
 def DashboardView(request):
     return render(request, 'dashboard.html')
+
+@csrf_exempt
+@login_required
+def submit_score(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = request.user.username
+        score = data.get('score', 0)
+
+        Leaderboard.objects.create(username=username, score=score)
+        return JsonResponse({'message': 'Score saved successfully'}, status=201)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def leaderboard(request):
+    top_scores = Leaderboard.objects.order_by('-score', 'date')[:10]  # Top 10 users
+    return render(request, 'leaderboard.html', {'top_scores': top_scores})
