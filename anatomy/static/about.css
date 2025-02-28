@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background: radial-gradient(circle, #f5ede3, #dfd3c3); /* Beige gradient */
+    color: black; /* Black text for readability */
     line-height: 1.6;
 }
 
@@ -25,8 +25,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #343a40;
-    color: #fff;
+    background: linear-gradient(135deg, #f5ede3, #dfd3c3); /* Beige gradient */
+    color: black;
 }
 
 .nav-links {
@@ -39,45 +39,48 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
+    color: black; /* Black for contrast */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #f39c12;
+    color: #a16d3c; /* Warm beige-brown hover effect */
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #a16d3c; /* Deep beige tone */
 }
 
 /* Welcome Section */
 .welcome-section {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(90deg, #5ce7ce, #22e309);
-    color: #fff;
+    background: linear-gradient(90deg, #f5ede3, #dfd3c3); /* Smooth beige gradient */
+    color: black;
 }
 
 .welcome-section h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: #7c5e3f; /* Deep warm beige */
 }
 
 .welcome-section p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: black;
 }
 
 .btn-primary {
     display: inline-block;
     padding: 10px 20px;
     font-size: 1rem;
-    color: #fff;
-    background-color: #f39c12;
+    color: black; /* Black text for consistency */
+    background: linear-gradient(135deg, #dfd3c3, #f5ede3); /* Subtle beige gradient */
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
@@ -85,20 +88,20 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #d35400;
+    background-color: #d4bba7; /* Slightly darker beige for hover */
 }
 
 /* About Section */
 .about {
     padding: 50px 20px;
-    background-color: #fff;
+    background-color: #fef9f3; /* Light beige background */
 }
 
 .about h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #2c3e50;
+    color: #7c5e3f; /* Warm beige tone */
 }
 
 .cards {
@@ -107,7 +110,7 @@ body {
 }
 
 .card {
-    background-color: #f8f9fa;
+    background-color: #f5ede3; /* Beige card background */
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -117,16 +120,18 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Softer hover shadow */
 }
 
 .card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: #7c5e3f;
 }
 
 .card p, .card li {
     font-size: 1rem;
-    color: #555;
+    color: black; /* Black text */
 }
 
 .card ul {
@@ -138,8 +143,8 @@ body {
 .cta-section {
     text-align: center;
     padding: 40px 20px;
-    background-color: #4ae309;
-    color: #fff;
+    background: linear-gradient(135deg, #f5ede3, #dfd3c3); /* Beige gradient */
+    color: black;
 }
 
 .cta-section .btn-primary {
@@ -150,8 +155,7 @@ body {
 .footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #343a40;
-    color: #fff;
+    background: linear-gradient(135deg, #dfd3c3, #f5ede3); /* Reverse beige gradient */
+    color: black; /* Black text for consistency */
     font-size: 0.9rem;
 }
-

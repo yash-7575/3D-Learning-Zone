@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Learning Zone</title>
+    <meta name="description" content="Discover human anatomy like never before with our interactive 3D learning platform. Perfect for students, educators, and curious minds!">
+    <title>3D Learning Zone - Explore Anatomy in 3D</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -12,126 +13,143 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 </head>
 <body>
-    <nav>
+    <nav style="position: absolute; width: 100%; z-index: 100;">
         <div class="nav-container">
             <div class="logo">
                 <span class="dna-icon">🧬</span> 3D Learning Zone
             </div>
             <ul class="nav-links">
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'login' %}" class="login-btn">Login</a></li>
+                <li><a href="{% url 'about' %}" title="Learn more about our mission and team">About Us</a></li>
+                <li><a href="{% url 'login' %}" class="login-btn" title="Access your account">Login</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Learning made easy</h1>
-            <p>Innovative educational platform designed to teach students about
-                the human body's sensory organs through interactive 3D models, quizzes, storyline and with a parent's dashboard.</p>
-            <div class="hero-buttons">
-                <a href="{% url 'login' %}" class="primary-btn">Start Exploring</a>
+    <main>
+        <header class="hero">
+            <div class="hero-content">
+                <h1>Explore Human Anatomy in 3D</h1>
+                <p>Dive into the fascinating world of human anatomy with our interactive 3D models, designed to make learning fun and easy for everyone.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'login' %}" class="primary-btn" title="Start your anatomy journey today">Get Started</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="floating-model">
-                <img src="{% static 'images/vector.png' %}" alt="3D Anatomy Model">
-                <div class="pulse-effect"></div>
+            <div class="hero-image">
+                <div class="floating-model">
+                    <img src="{% static 'images/vector.png' %}" alt="Interactive 3D Anatomy Model Preview">
+                    <div class="pulse-effect"></div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="features">
-        <h2>Why Learn With 3D Models?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>360° Rotation</h3>
-                <p>Examine anatomical structures from every angle with fully rotatable 3D models.</p>
+        <section class="features">
+            <h2>Why Choose 3D Learning Zone?</h2>
+            <p>Our platform is designed to help you learn anatomy in a way that’s engaging, interactive, and easy to understand. Here’s what makes us unique:</p>
+            <div class="features-grid" style="display: flex; justify-content: space-evenly; flex-wrap: nowrap; gap: 40px; margin-top: 40px;">
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Interactive 3D Models</h3>
+                    <p>Rotate, zoom, and explore detailed 3D models of organs and systems from every angle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Fun Quizzes</h3>
+                    <p>Test your knowledge with interactive quizzes that make learning enjoyable.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Engaging Lessons</h3>
+                    <p>Follow step-by-step lessons that guide you through complex topics with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Parents and students can track learning progress with our easy-to-use dashboard.</p>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Layer Navigation</h3>
-                <p>Explore different layers of anatomy from skin to bones with our layering system.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Interactive Learning</h3>
-                <p>Click on any structure to learn more about its function and relationships.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="models">
-        <h2>Featured 3D Models</h2>
-        <div class="model-grid">
-            <div class="model-card">
-                <img src="{% static 'images/brain.jpg' %}" alt="Nervous System">
-                <div class="model-content">
-                    <span class="model-tag">Interactive 3D</span> 
-                    <h3>Brain & Nerves</h3>
-                    <p>Detailed neural pathways and brain structure exploration.</p>
+        <section class="models">
+            <h2>Explore Our 3D Anatomy Library</h2>
+            <p>Discover detailed 3D models of the human body, complete with annotations and explanations to help you learn.</p>
+            <div class="model-grid">
+                <div class="model-card">
+                    <img src="{% static 'images/brain.jpg' %}" alt="Interactive Brain and Nervous System Model">
+                    <div class="model-content">
+                        <h3>Brain</h3>
+                        <p>Learn about the brain’s structure, neural pathways, and how it controls the body.</p>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="{% static 'images/heart.jpg' %}" alt="Interactive Heart Model">
+                    <div class="model-content">
+                        <h3>Heart</h3>
+                        <p>Explore the heart’s chambers, valves, and how blood flows through the body.</p>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="{% static 'images/lungs.jpg' %}" alt="Interactive Respiratory System Model">
+                    <div class="model-content">
+                        <h3>Lungs</h3>
+                        <p>Understand how the lungs work, from breathing to oxygen exchange.</p>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="{% static 'images/liver.jpg' %}" alt="Interactive Liver Model">
+                    <div class="model-content">
+                        <h3>Liver</h3>
+                        <p>Discover the liver’s role in digestion, detoxification, and more.</p>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <img src="{% static 'images/kidney.jpg' %}" alt="Interactive Kidney Model">
+                    <div class="model-content">
+                        <h3>Kidneys</h3>
+                        <p>Learn how the kidneys filter blood and maintain the body’s balance.</p>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-content" style="text-align: center;">
+                        <h2>More Coming Soon!</h2>
+                        <p>We’re constantly adding new models and features to enhance your learning experience.</p>
+                    </div>
                 </div>
             </div>
-            <div class="model-card">
-                <img src="{% static 'images/heart.jpg' %}" alt="Heart">
-                <div class="model-content">
-                    <span class="model-tag">Interactive 3D</span> 
-                    <h3>Heart</h3>
-                    <p>Monitor cardiovascular health and explore heart structures.</p>
-                </div>
-            </div>
-            <div class="model-card">
-                <img src="{% static 'images/lungs.jpg' %}" alt="Lungs">
-                <div class="model-content">
-                    <span class="model-tag">Interactive 3D</span> 
-                    <h3>Lungs</h3>
-                    <p>Track respiratory function and examine lung anatomy.</p>
-                </div>
-            </div>
-            <div class="model-card">
-                <img src="{% static 'images/liver.jpg' %}" alt="Liver">
-                <div class="model-content">
-                    <span class="model-tag">Interactive 3D</span> 
-                    <h3>Liver</h3>
-                    <p>Evaluate hepatic performance and liver structure.</p>
-                </div>
-            </div>
-            <div class="model-card">
-                <img src="{% static 'images/kidney.jpg' %}" alt="Kidney">
-                <div class="model-content">
-                    <span class="model-tag">Interactive 3D</span> 
-                    <h3>Kidney</h3>
-                    <p>Understand renal function and kidney anatomy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta"> 
-        <div class="dna-animation"></div>
-        <h2>Ready to Transform Your Anatomy Learning?</h2>
-        <a href="{% url 'login' %}" class="primary-btn">Get Started</a>
-    </section>
+        <section class="cta">
+            <div class="dna-animation"></div>
+            <div class="cta-content">
+                <h2>Start Your Anatomy Adventure Today</h2>
+                <p>Join thousands of learners who are mastering anatomy with our interactive 3D platform.</p>
+                <div class="cta-button" style="margin-top: 20px;">
+                    <a href="{% url 'login' %}" class="primary-btn" title="Sign up and start learning">Sign Up Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>3D Learning Zone</h3>
-                <p>Advanced 3D anatomy learning platform for better student visualisation.</p>
+                <h3>About 3D Learning Zone</h3>
+                <p>We’re on a mission to make anatomy education accessible, engaging, and fun for everyone.</p>
             </div>
             <div class="footer-section">
-                <h3>Explore</h3>
-                <ul> 
-                    <li><a href="{% url 'information' %}">Organs</a></li> 
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>About</h3>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'information' %}" title="Learn about different organ systems">Organ Systems</a></li>
                 </ul>
             </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="{% url 'about' %}" title="Learn more about our platform">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {% now "Y" %} 3D Learning Zone. All rights reserved.</p>
         </div>
     </footer>
 </body>

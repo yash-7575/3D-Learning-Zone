@@ -1,47 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ffffff, #e6ffe6);
-    color: #004d00;
+    font-family: 'Outfit', sans-serif; /* Matching typography */
+    background: radial-gradient(circle, #ffffff, #fff9f2); /* Same as home.html */
+    color: #000000; /* Black text */
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
 h2 {
-    color: #006600;
+    color: #000000; /* Black text */
 }
 
 table {
     width: 60%;
     margin: 20px auto;
     border-collapse: collapse;
-    background: #ccffcc;
-    box-shadow: 0 4px 8px rgba(0, 77, 0, 0.2);
+    background: #F8EDE3; /* Light beige background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-radius: 10px;
     overflow: hidden;
 }
 
 table, th, td {
-    border: 1px solid #009900;
+    border: 1px solid #DFD3C3; /* Darker beige border */
     padding: 10px;
 }
 
 th {
-    background: #008000;
-    color: white;
+    background: #DFD3C3; /* Darker beige for header */
+    color: #000000; /* Black text */
     font-size: 18px;
 }
 
 td {
-    background: #e6ffe6;
+    background: #ffffff; /* White background for cells */
     font-size: 16px;
+    color: #000000; /* Black text */
 }
 
 tr:nth-child(even) {
-    background: #b3ffb3;
+    background: #F8EDE3; /* Light beige for even rows */
 }
 
 tr:hover {
-    background: #99e699;
+    background: #DFD3C3; /* Darker beige on hover */
     transition: 0.3s;
 }
