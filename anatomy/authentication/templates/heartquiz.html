@@ -33,7 +33,11 @@
             <button id="prev-btn" class="nav-btn" disabled>Previous</button>
             <button id="next-btn" class="nav-btn">Next</button>
             <button id="submit-btn" class="submit-btn" style="display: none;">Submit Quiz</button>
+            <button id="leaderboard-btn" class="nav-btn" style="position: none; top: 100px; right: 400px;">
+                <a href="{% url 'leaderboard' %}" style="text-decoration: none; color: inherit;">View Leaderboard</a>
+            </button>
         </div>
+        
 
         <div id="results" class="results" style="display: none;">
             <h2>Quiz Results</h2>

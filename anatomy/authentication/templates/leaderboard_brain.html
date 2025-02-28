@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard_brain.css' %}">
 </head>
 <body>
     <h2>Leaderboard</h2>
-    {% if top_scores %}
     <table border="1">
         <tr>
             <th>Rank</th>
@@ -17,20 +16,14 @@
             <th>Score</th>
             <th>Date</th>
         </tr>
-        {% for user in top_scores %}
+        {% for player in top_scores %}
         <tr>
             <td>{{ forloop.counter }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.score }}</td>
-            <td>{{ user.date }}</td>
+            <td>{{ player.username }}</td>
+            <td>{{ player.score }}</td>
+            <td>{{ player.date }}</td>
         </tr>
         {% endfor %}
-    </table>
-    {%endfor%}
-    <table>
-{% else %}
-    <p>No scores available</p>  <!-- Debugging line -->
-{% endif %}
     </table>
 </body>
 </html>
