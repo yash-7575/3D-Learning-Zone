@@ -27,4 +27,9 @@ urlpatterns = [
     path('submit_score_lungs/', submit_score_lungs, name='submit_score_lungs'),
     path('leaderboard_lungs/', leaderboard_lungs, name='leaderboard_lungs'),
     path('lungs-quiz/', views.LungsQuizView, name='lungs-quiz'),
+    path('heart-info/', views.HeartInfoView, name='heart-info'),
+    path('brain-info/', views.BrainInfoView, name='brain-info'),
+    path('liver-info/', views.LiverInfoView, name='liver-info'),
+    path('kidney-info/', views.KidneyInfoView, name='kidney-info'),
+    path('lungs-info/', views.LungsInfoView, name='lungs-info'),
 ]

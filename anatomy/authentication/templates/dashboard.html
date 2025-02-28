@@ -16,7 +16,7 @@
                 <p style="color: rgba(0, 0, 0, 0.9); margin-top: 10px; font-size: 1.1em;">
                     Explore interactive 3D models and enhance your understanding of human Organs
                 </p>
-                <p style="color: rgba(255,255,255,0.9); margin-top: 10px; font-size: 1.1em;">
+                <p style="color: rgba(0, 0, 0, 0.9); margin-top: 10px; font-size: 1.1em;">
                     Welcome, {{ user.username }}
                 </p>
                 <a href="{% url 'chatbot' %}" class="chatbot-btn">AI Assistant</a>
@@ -31,6 +31,7 @@
                     <p>Monitor cardiovascular health and explore heart structures.</p>
                     <a href="{% url 'heart-model' %}" class="organ-btn">View Model</a>
                     <a href="{% url 'heart-quiz' %}" class="quiz-btn">Take Quiz</a>
+                    <a href="{% url 'heart-info' %}" class="info-btn">Info</a>
                 </div>
             </div>
             <div class="organ-card">
@@ -40,6 +41,7 @@
                     <p>Track respiratory function and examine lung anatomy.</p>
                     <a href="{% url 'lungs-model' %}" class="organ-btn">View Model</a>
                     <a href="{% url 'lungs-quiz' %}" class="quiz-btn">Take Quiz</a>
+                    <a href="{% url 'lungs-info' %}" class="info-btn">Info</a>
                 </div>
             </div>
             <div class="organ-card">
@@ -49,6 +51,7 @@
                     <p>Assess neurological activity and explore brain regions.</p>
                     <a href="{% url 'brain-model' %}" class="organ-btn">View Model</a>
                     <a href="{% url 'brain-quiz' %}" class="quiz-btn">Take Quiz</a>
+                    <a href="{% url 'brain-info' %}" class="info-btn">Info</a>
                 </div>
             </div>
             <div class="organ-card">
@@ -58,6 +61,7 @@
                     <p>Evaluate hepatic performance and liver structure.</p>
                     <a href="{% url 'liver-model' %}" class="organ-btn">View Model</a>
                     <a href="{% url 'liver-quiz' %}" class="quiz-btn">Take Quiz</a>
+                    <a href="{% url 'liver-info' %}" class="info-btn">Info</a>
                 </div>
             </div>
             <div class="organ-card">
@@ -67,6 +71,7 @@
                     <p>Analyze renal function and kidney anatomy.</p>
                     <a href="{% url 'kidney-model' %}" class="organ-btn">View Model</a>
                     <a href="{% url 'kidney-quiz' %}" class="quiz-btn">Take Quiz</a>
+                    <a href="{% url 'kidney-info' %}" class="info-btn">Info</a>
                 </div>
             </div>
         </div>

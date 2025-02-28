@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaccad;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            color: #337ab7;
+        }
+        h2 {
+            color: #5a5a5a;
+        }
+        img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Human Kidney</h1>
+        <img src="{% static 'images/kidneys.jpg' %}" alt="Human Kidney">
+        <p>
+            The human kidneys are essential organs responsible for filtering waste products from the blood, balancing body fluids, and regulating blood pressure. They play a critical role in maintaining overall homeostasis.
+        </p>
+        <h2>Structure and Function</h2>
+        <p>
+            The kidneys are bean-shaped organs located on either side of the spine. They contain millions of nephrons, which filter blood and produce urine. The kidneys also help regulate electrolyte levels and remove toxins from the body.
+        </p>
+        <h2>Importance of Kidney Health</h2>
+        <p>
+            Maintaining kidney health is crucial for overall well-being. Staying hydrated, consuming a balanced diet, reducing sodium intake, and avoiding excessive medication use can help preserve kidney function and prevent kidney diseases.
+        </p>
+        <div class="footer">&copy; 2025 Kidney Health Awareness</div>
+    </div>
+</body>
+</html>
+

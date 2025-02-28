@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaccad;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            color: #337ab7;
+        }
+        h2 {
+            color: #5a5a5a;
+        }
+        img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Human Lungs</h1>
+        <img src="{% static 'images/lungs.jpg' %}" alt="Human Lungs">
+        <p>
+            The human lungs are essential respiratory organs responsible for gas exchange. They enable the intake of oxygen and the removal of carbon dioxide, playing a vital role in maintaining overall health and cellular function.
+        </p>
+        <h2>Structure and Function</h2>
+        <p>
+            The lungs are a pair of spongy, air-filled organs located on either side of the chest. They contain bronchi, bronchioles, and alveoli, where oxygen is transferred into the blood, and carbon dioxide is expelled from the body.
+        </p>
+        <h2>Importance of Lung Health</h2>
+        <p>
+            Maintaining lung health is crucial for overall well-being. Regular exercise, avoiding smoking, staying hydrated, and minimizing exposure to pollutants can help keep the lungs functioning optimally and prevent respiratory diseases.
+        </p>
+        <div class="footer">&copy; 2025 Lung Health Awareness</div>
+    </div>
+</body>
+</html>

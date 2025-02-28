@@ -295,3 +295,17 @@ def leaderboard_lungs(request):
     except Exception as e:
         print("Error:", e)
         return JsonResponse({'error': str(e)}, status=500)
+def HeartInfoView(request):
+        return render(request, 'organinfo/heartinfo.html')
+
+def BrainInfoView(request):
+        return render(request, 'organinfo/braininfo.html')
+
+def LiverInfoView(request):
+        return render(request, 'organinfo/liverinfo.html')
+
+def KidneyInfoView(request):
+        return render(request, 'organinfo/kidneyinfo.html')
+
+def LungsInfoView(request):
+        return render(request, 'organinfo/lungsinfo.html')

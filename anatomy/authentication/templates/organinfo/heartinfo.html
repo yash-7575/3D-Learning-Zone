@@ -1,0 +1,52 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaccad;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0c0c0c;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Human Heart</h1>
+        <img src="{% static 'images/heart.jpg' %}" alt="Human Heart">
+        <p>
+            The human heart is a vital organ that functions as a pump to circulate blood throughout the body. It is a muscular organ located slightly to the left of the center of the chest and is responsible for delivering oxygen and nutrients to tissues while removing waste products.
+        </p>
+        <h2>Structure and Function</h2>
+        <p>
+            The heart is divided into four chambers: the right atrium, right ventricle, left atrium, and left ventricle. These chambers work together to ensure efficient blood circulation. The heartbeats rhythmically due to electrical impulses, maintaining a steady blood flow essential for sustaining life.
+        </p>
+    </div>
+</body>
+</html>

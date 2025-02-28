@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaccad;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+        h1 {
+            color:rgb(20, 56, 100);
+        }
+        h2 {
+            color: #5a5a5a;
+        }
+        img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>The Human Liver</h1>
+        <img src="{% static 'images/liver.jpg' %}" alt="Human Liver">
+        <p>
+            The human liver is a vital organ responsible for detoxification, metabolism, and the production of essential proteins. It plays a crucial role in processing nutrients, breaking down toxins, and regulating blood composition.
+        </p>
+        <h2>Structure and Function</h2>
+        <p>
+            The liver is divided into two main lobes and is composed of specialized cells called hepatocytes. These cells help in bile production, which aids in digestion, and in the filtration of harmful substances from the blood.
+        </p>
+        <h2>Importance of Liver Health</h2>
+        <p>
+            Maintaining liver health is essential for overall well-being. A balanced diet, regular exercise, hydration, and avoiding excessive alcohol consumption contribute to optimal liver function and help prevent liver diseases.
+        </p>
+        <div class="footer">&copy; 2025 Liver Health Awareness</div>
+    </div>
+</body>
+</html>
