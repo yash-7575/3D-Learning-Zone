@@ -2,43 +2,51 @@ body {
     font-family: 'Outfit', sans-serif;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(180deg, #12c83f 0%, #24aa2f 100%);
-    color: #2c3e50;
+    background: radial-gradient(circle, #ffffff, #fff9f2); /* Same as home.html */
+    color: #000000; /* Black text */
 }
+
 .organ-section {
     max-width: 800px;
     margin: 30px auto;
     padding: 25px;
-    background: white;
+    background: #ffffff; /* White background */
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     text-align: center;
-    color: white;
+    color: #000000; /* Black text */
     font-size: 2.5em;
     margin-bottom: 40px;
 }
+
 h2 {
-    color: #2c5f49;
-    border-bottom: 3px solid #4CAF50;
+    color: #000000; /* Black text */
+    border-bottom: 3px solid #DFD3C3; /* Darker beige border */
     padding-bottom: 10px;
     margin-top: 30px;
 }
+
 .fun-fact {
-    background: #e8f5e9;
+    background: #F8EDE3; /* Light beige background */
     padding: 15px;
     border-radius: 8px;
     margin: 15px 0;
 }
+
 .fun-fact h4 {
-    color: #2c5f49;
+    color: #000000; /* Black text */
     margin: 0 0 10px 0;
 }
+
 ul {
     padding-left: 20px;
 }
+
 li {
     margin: 10px 0;
     line-height: 1.6;
+    color: #000000; /* Black text */
 }

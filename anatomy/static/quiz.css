@@ -1,7 +1,7 @@
 /* General styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle at center, #e8f5e9 0%, #81c784 100%);
+    font-family: 'Outfit', sans-serif; /* Matching typography */
+    background: radial-gradient(circle, #ffffff, #ffdcb5); /* Same as home.html */
     margin: 0;
     padding: 20px;
     min-height: 100vh;
@@ -26,13 +26,13 @@ body {
 }
 
 .header h1 {
-    color: #2e7d32;
+    color: #000000; /* Black text */
     margin-bottom: 20px;
 }
 
 /* Progress bar */
 .progress-bar {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0; /* Light gray */
     height: 10px;
     border-radius: 5px;
     margin: 20px 0;
@@ -40,7 +40,7 @@ body {
 }
 
 .progress {
-    background-color: #4caf50;
+    background-color: #ffdaaa; /* Darker beige for progress */
     height: 100%;
     width: 0;
     transition: width 0.3s ease;
@@ -52,7 +52,7 @@ body {
 }
 
 .question-container h2 {
-    color: #1b5e20;
+    color: #000000; /* Black text */
     font-size: 1.3rem;
     margin-bottom: 20px;
 }
@@ -64,24 +64,25 @@ body {
 }
 
 .option {
-    background-color: #f1f8e9;
-    border: 2px solid #a5d6a7;
+    background-color: #F8EDE3; /* Light beige background */
+    border: 2px solid #DFD3C3; /* Darker beige border */
     border-radius: 8px;
     padding: 15px;
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    color: #000000; /* Black text */
 }
 
 .option:hover {
-    background-color: #c8e6c9;
+    background-color: #ffdaaa; 
     transform: translateY(-2px);
 }
 
 .option.selected {
-    background-color: #81c784;
-    color: white;
-    border-color: #2e7d32;
+    background-color: #ffdaaa; 
+    color: #000000; /* Black text */
+    border-color: #DFD3C3;
 }
 
 /* Controls */
@@ -101,22 +102,22 @@ body {
 }
 
 .nav-btn {
-    background-color: #66bb6a;
-    color: white;
+    background-color: #ffdaaa; /* Darker beige */
+    color: #000000; /* Black text */
 }
 
 .nav-btn:disabled {
-    background-color: #c8c8c8;
+    background-color: #c8c8c8; /* Gray for disabled state */
     cursor: not-allowed;
 }
 
 .submit-btn {
-    background-color: #2e7d32;
-    color: white;
+    background-color: #ffdaaa; /* Darker beige */
+    color: #000000; /* Black text */
 }
 
 .submit-btn:hover {
-    background-color: #1b5e20;
+    background-color: #F8EDE3; /* Light beige on hover */
 }
 
 /* Results section */
@@ -124,16 +125,16 @@ body {
     text-align: center;
     margin-top: 30px;
     padding: 20px;
-    background-color: #f1f8e9;
+    background-color: #F8EDE3; /* Light beige background */
     border-radius: 8px;
 }
 
 .results h2 {
-    color: #2e7d32;
+    color: #000000; /* Black text */
     margin-bottom: 15px;
 }
 
 .results p {
     font-size: 1.2rem;
-    color: #1b5e20;
+    color: #000000; /* Black text */
 }
