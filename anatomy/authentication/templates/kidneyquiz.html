@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Quiz</title>
     <link rel="stylesheet" href="{% static 'quiz.css' %}">
+    <script>
+        const username = "{{ request.user.username }}";  // Get the username from Django
+    </script>
 </head>
 <body>
     <div class="quiz-container">
@@ -34,6 +37,9 @@
         <div id="results" class="results" style="display: none;">
             <h2>Quiz Results</h2>
             <p>Your score: <span id="score">0</span>/<span id="total">0</span></p>
+            <button id="leaderboard-btn" class="nav-btn" style="position: none; top: 100px; right: 400px;">
+                <a href="{% url 'leaderboard_kidney' %}" style="text-decoration: none; color: inherit;">View Leaderboard</a>
+            </button>
         </div>
     </div>
     <script src="{% static 'kidney.js' %}"></script>

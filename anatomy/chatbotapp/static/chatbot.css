@@ -1,0 +1,107 @@
+/* HealthSphere Chatbot Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fff9c4; /* Light yellow background color */
+    color: #2c3e50; /* Text color */
+}
+
+.container {
+    width: 80%;
+    height: 85vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: #2ecc71; /* Emerald background color */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Chatbox */
+.chatbox {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #f8f9fa; /* Light background color */
+}
+
+/* Messages */
+.user-message {
+    align-self: flex-end;
+    background: #343a40; /* Navbar background color */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 60%;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 60%;
+}
+
+/* Input Section */
+.input-area {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 12px;
+    background: white;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-area button {
+    background: #f39c12; /* Button color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.input-area button:hover {
+    background: #d35400; /* Darker shade for hover effect */
+}
+
+.chatbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+    background: #343a40; /* Scrollbar thumb color */
+    border-radius: 5px;
+}

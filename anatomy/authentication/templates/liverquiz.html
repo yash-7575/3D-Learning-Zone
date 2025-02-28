@@ -34,6 +34,9 @@
         <div id="results" class="results" style="display: none;">
             <h2>Quiz Results</h2>
             <p>Your score: <span id="score">0</span>/<span id="total">0</span></p>
+            <button id="leaderboard-btn" class="nav-btn" style="position: none; top: 100px; right: 400px;">
+                <a href="{% url 'leaderboard_lungs' %}" style="text-decoration: none; color: inherit;">View Leaderboard</a>
+            </button>
         </div>
     </div>
     <script src="{% static 'liver.js' %}"></script>

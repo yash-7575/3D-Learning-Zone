@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard_brain.css' %}">
+</head>
+<body>
+    <h2>Leaderboard</h2>
+    <table border="1">
+        <tr>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Score</th>
+            <th>Date</th>
+        </tr>
+        {% for player in top_scores %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ player.username }}</td>
+            <td>{{ player.score }}</td>
+            <td>{{ player.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

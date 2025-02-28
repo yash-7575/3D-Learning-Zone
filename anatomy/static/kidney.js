@@ -145,7 +145,33 @@ submitBtn.addEventListener('click', () => {
     optionsEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
     submitBtn.disabled = true;
     prevBtn.disabled = true;
+
+    // Submit score to server
+    fetch('/login/submit_score_kidney/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken()  // Ensure CSRF protection
+        },
+        body: JSON.stringify({
+            username: username,
+            score: score
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Score submitted:', data);
+    })
+    .catch(error => console.error('Error:', error));
 });
+    
+// Function to get CSRF token
+function getCSRFToken() {
+    return document.cookie.split('; ')
+        .find(row => row.startsWith('csrftoken'))
+        ?.split('=')[1];
+}
+
 
 // Start the quiz
 loadQuestion();

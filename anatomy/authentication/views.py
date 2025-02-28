@@ -7,8 +7,11 @@ from django.contrib.auth.decorators import login_required
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Leaderboard
-
+from .models import Leaderboard_heart
+from authentication.models import Leaderboard_brain
+from .models import Leaderboard_kidney
+from .models import Leaderboard_liver
+from .models import Leaderboard_lungs
 
 def HeartModelView(request):
     return render(request, 'heart.html')
@@ -63,7 +66,7 @@ def RegisterView(request):
         if user_data_has_error:
             return redirect('register')
         else:
-            new_user = User.objects.create_user(
+            User.objects.create_user(
                 first_name=first_name,
                 last_name=last_name,
                 email=email, 
@@ -102,17 +105,193 @@ def DashboardView(request):
 
 @csrf_exempt
 @login_required
+def submit_score_heart(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        username = request.user.username
+        score = data.get('score', 0)
+
+        Leaderboard_heart.objects.create(username=username, score=score)
+        return JsonResponse({'message': 'Score saved successfully'}, status=201)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def leaderboard_heart(request):
+    top_scores = Leaderboard_heart.objects.order_by('-score', 'date')[:10]  # Top 10 users
+    return render(request, 'leaderboard_heart.html', {'top_scores': top_scores})
+
+
+@csrf_exempt
+@login_required
 def submit_score(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         username = request.user.username
         score = data.get('score', 0)
 
-        Leaderboard.objects.create(username=username, score=score)
+        Leaderboard_brain.objects.create(username=username, score=score)
         return JsonResponse({'message': 'Score saved successfully'}, status=201)
 
     return JsonResponse({'error': 'Invalid request'}, status=400)
 
-def leaderboard(request):
-    top_scores = Leaderboard.objects.order_by('-score', 'date')[:10]  # Top 10 users
-    return render(request, 'leaderboard.html', {'top_scores': top_scores})
+@login_required
+def leaderboard_brain(request):
+    current_user = request.user.username  # ✅ Get the logged-in user's username
+
+    # ✅ Get the logged-in user's score from the Leaderboard_brain model
+    user_score = Leaderboard_brain.objects.filter(username=current_user).first()
+
+    # ✅ Get the top 10 scores for the leaderboard
+    top_scores = Leaderboard_brain.objects.order_by('-score')[:10]
+
+    return render(request, 'leaderboard_brain.html', {
+        "user_score": user_score,
+        "top_scores": top_scores
+    }) 
+
+@csrf_exempt
+@login_required
+def submit_score_kidney(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            username = request.user.username
+            score = data.get('score', 0)
+
+            print(f"Received score: {username} - {score}")  # Debugging print
+
+            # Ensure score is a valid integer
+            if not isinstance(score, int):
+                return JsonResponse({'error': 'Invalid score format'}, status=400)
+
+            # Save to database
+            new_entry = Leaderboard_kidney.objects.create(username=username, score=score)
+            print(f"Saved score: {new_entry}")  # Debugging print
+
+            return JsonResponse({'message': 'Score saved successfully'}, status=201)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            print("Error:", e)  # Debugging print
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+
+@login_required
+def leaderboard_kidney(request):
+    current_user = request.user.username  # Get the logged-in user's username
+
+    # Get the logged-in user's score from the Leaderboard_kidney model
+    user_score = Leaderboard_kidney.objects.filter(username=current_user).first()
+
+    # Get the top 10 scores for the leaderboard
+    top_scores = Leaderboard_kidney.objects.order_by('-score')[:10]
+
+    print("Top Scores:", top_scores)  # Debugging line
+    print("User Score:", user_score)  # Debugging line
+
+    return render(request, 'leaderboard_kidney.html', {
+        "user_score": user_score,
+        "top_scores": top_scores
+    })
+
+
+
+@csrf_exempt
+@login_required
+def submit_score_liver(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            username = request.user.username
+            score = data.get('score', 0)
+
+            print(f"Received score: {username} - {score}")  # Debugging print
+
+            # Ensure score is a valid integer
+            if not isinstance(score, int):
+                return JsonResponse({'error': 'Invalid score format'}, status=400)
+
+            # Save to database
+            new_entry = Leaderboard_liver.objects.create(username=username, score=score)
+            print(f"Saved score: {new_entry}")  # Debugging print
+
+            return JsonResponse({'message': 'Score saved successfully'}, status=201)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            print("Error:", e)  # Debugging print
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+
+@login_required
+def leaderboard_liver(request):
+    current_user = request.user.username  # Get the logged-in user's username
+
+    # Get the logged-in user's score from the Leaderboard_liver model
+    user_score = Leaderboard_liver.objects.filter(username=current_user).first()
+
+    # Get the top 10 scores for the leaderboard
+    top_scores = Leaderboard_liver.objects.order_by('-score')[:10]
+
+    print("Top Scores:", top_scores)  # Debugging line
+    print("User Score:", user_score)  # Debugging line
+
+    return render(request, 'leaderboard_liver.html', {
+        "user_score": user_score,
+        "top_scores": top_scores
+    })
+
+@csrf_exempt
+@login_required
+def submit_score_lungs(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            username = request.user.username
+            score = data.get('score', 0)
+
+            print(f"Received score: {username} - {score}")  # Debugging print
+
+            # Ensure score is a valid integer
+            if not isinstance(score, int):
+                return JsonResponse({'error': 'Invalid score format'}, status=400)
+
+            # Save to database
+            new_entry = Leaderboard_lungs.objects.create(username=username, score=score)
+            print(f"Saved score: {new_entry}")  # Debugging print
+
+            return JsonResponse({'message': 'Score saved successfully'}, status=201)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON'}, status=400)
+        except Exception as e:
+            print("Error:", e)  # Debugging print
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': 'Invalid request'}, status=400)
+
+
+@login_required
+def leaderboard_lungs(request):
+    try:
+        current_user = request.user.username  # Get the logged-in user's username
+
+        # Get the logged-in user's score from the Leaderboard_lungs model
+        user_score = Leaderboard_lungs.objects.filter(username=current_user).first()
+
+        # Get the top 10 scores for the leaderboard
+        top_scores = Leaderboard_lungs.objects.order_by('-score')[:10]
+
+        print("Top Scores:", top_scores)  # Debugging line
+        print("User Score:", user_score)  # Debugging line
+
+        return render(request, 'leaderboard_liver.html', {
+            "user_score": user_score,
+            "top_scores": top_scores
+        })
+    except Exception as e:
+        print("Error:", e)
+        return JsonResponse({'error': str(e)}, status=500)

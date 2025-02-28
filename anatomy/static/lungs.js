@@ -145,7 +145,38 @@ submitBtn.addEventListener('click', () => {
     optionsEl.querySelectorAll('button').forEach(btn => btn.disabled = true);
     submitBtn.disabled = true;
     prevBtn.disabled = true;
+
+     // Send score to Django backend
+     fetch('/login/submit_score_lungs/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken() // Ensure CSRF token is included
+        },
+        credentials: 'same-origin',
+        body: JSON.stringify({
+            score: score
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Score submitted:', data);
+    })
+    .catch(error => console.error('Error:', error));
 });
+
+function getCSRFToken() {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        document.cookie.split(';').forEach(cookie => {
+            let trimmed = cookie.trim();
+            if (trimmed.startsWith('csrftoken=')) {
+                cookieValue = trimmed.substring('csrftoken='.length);
+            }
+        });
+    }
+    return cookieValue;
+}
 
 // Start the quiz
 loadQuestion();

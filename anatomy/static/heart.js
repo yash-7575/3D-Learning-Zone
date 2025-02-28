@@ -147,7 +147,7 @@ submitBtn.addEventListener('click', () => {
     prevBtn.disabled = true;
 
     // Send score to Django backend
-    fetch('/login/submit-score/', {
+    fetch('/login/submit_score_heart/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -165,12 +165,14 @@ submitBtn.addEventListener('click', () => {
     .catch(error => console.error('Error:', error));
 });
 
+
 // Function to get CSRF token
 function getCSRFToken() {
     return document.cookie.split('; ')
         .find(row => row.startsWith('csrftoken'))
         ?.split('=')[1];
 }
+
 
 
 // Start the quiz
