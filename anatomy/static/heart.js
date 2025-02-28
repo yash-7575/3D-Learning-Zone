@@ -147,14 +147,14 @@ submitBtn.addEventListener('click', () => {
     prevBtn.disabled = true;
 
     // Send score to Django backend
-    fetch('/login/submit-score/', {
+    fetch('/login/submit_score_heart/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': getCSRFToken() // Ensure CSRF token is included
         },
-        credentials: 'same-origin',
         body: JSON.stringify({
+            username: "test_user",  // Replace with dynamic username if available
             score: score
         })
     })
@@ -165,18 +165,14 @@ submitBtn.addEventListener('click', () => {
     .catch(error => console.error('Error:', error));
 });
 
+
+// Function to get CSRF token
 function getCSRFToken() {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        document.cookie.split(';').forEach(cookie => {
-            let trimmed = cookie.trim();
-            if (trimmed.startsWith('csrftoken=')) {
-                cookieValue = trimmed.substring('csrftoken='.length);
-            }
-        });
-    }
-    return cookieValue;
+    return document.cookie.split('; ')
+        .find(row => row.startsWith('csrftoken'))
+        ?.split('=')[1];
 }
+
 
 
 // Start the quiz

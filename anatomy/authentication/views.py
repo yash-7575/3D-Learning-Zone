@@ -107,48 +107,19 @@ def DashboardView(request):
 @login_required
 def submit_score_heart(request):
     if request.method == 'POST':
-        try:
-            data = json.loads(request.body)
-            username = request.user.username
-            score = data.get('score', 0)
+        data = json.loads(request.body)
+        username = request.user.username
+        score = data.get('score', 0)
 
-            print(f"Received score: {username} - {score}")  # Debugging print
-
-            # Ensure score is a valid integer
-            if not isinstance(score, int):
-                return JsonResponse({'error': 'Invalid score format'}, status=400)
-
-            # Save to database
-            new_entry = Leaderboard_heart.objects.create(username=username, score=score)
-            print(f"Saved score: {new_entry}")  # Debugging print
-
-            return JsonResponse({'message': 'Score saved successfully'}, status=201)
-        except json.JSONDecodeError:
-            return JsonResponse({'error': 'Invalid JSON'}, status=400)
-        except Exception as e:
-            print("Error:", e)  # Debugging print
-            return JsonResponse({'error': str(e)}, status=500)
+        Leaderboard_heart.objects.create(username=username, score=score)
+        return JsonResponse({'message': 'Score saved successfully'}, status=201)
 
     return JsonResponse({'error': 'Invalid request'}, status=400)
 
-
-@login_required
 def leaderboard_heart(request):
-    current_user = request.user.username  # Get the logged-in user's username
+    top_scores = Leaderboard_heart.objects.order_by('-score', 'date')[:10]  # Top 10 users
+    return render(request, 'leaderboard_heart.html', {'top_scores': top_scores})
 
-    # Get the logged-in user's score from the Leaderboard model
-    user_score = Leaderboard_heart.objects.filter(username=current_user).first()
-
-    # Get the top 10 scores for the leaderboard
-    top_scores = Leaderboard_heart.objects.order_by('-score')[:10]
-
-    print("Top Scores:", top_scores)  # Debugging line
-    print("User Score:", user_score)  # Debugging line
-
-    return render(request, 'leaderboard_heart.html', {
-        "user_score": user_score,
-        "top_scores": top_scores
-    })
 
 @csrf_exempt
 @login_required
