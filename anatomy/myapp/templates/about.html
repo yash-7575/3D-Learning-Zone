@@ -1,10 +1,10 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Project Organ</title>
+    <title>About Us | 3D Learning Zone</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'about.css' %}">
 </head>
@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">Project Organ</div>
+            <div class="logo">3D Learning Zone</div>
             <ul class="nav-links">
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="#">Features</a></li>
@@ -20,15 +20,55 @@
             </ul>
         </nav>
     </header>
-
     <!-- Welcome Section -->
     <section class="welcome-section">
         <div class="welcome-content">
-            <h1>Welcome to Project Organ</h1>
+            <h1>Welcome to 3D Learning Zone</h1>
             <p>Your gateway to exploring the wonders of the human body through interactive and engaging tools.</p>
-            <a href="#" class="btn-primary">Get Started</a>
+            <a href="{% url 'login' %}" class="btn-primary">Get Started</a>
         </div>
     </section>
+    
+    <!-- 3D Learning Zone Manual Section -->
+    <div class="container">
+        <h1>3D Learning Zone Manual</h1>
+        
+        <div class="section">
+            <h2>Homepage</h2>
+            <img src="{% static 'images/about_us_images/Home.png' %}" alt="Homepage Screenshot">
+            <p>Welcome to the 3D Learning Zone! Click on "Login" to access 3D models of human organs.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Login Page</h2>
+            <img src="{% static 'images/about_us_images/Login.png' %}" alt="Login Page Screenshot">
+            <p>Enter your username and password to log in. If you're not a member, click "Signup".</p>
+        </div>
+        
+        <div class="section">
+            <h2>Registration Page</h2>
+            <img src="{% static 'images/about_us_images/Register.png' %}" alt="Registration Page Screenshot">
+            <p>Fill in your details to create an account, then log in to access the platform.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Dashboard</h2>
+            <img src="{% static 'images/about_us_images/Dashboard.png' %}" alt="Dashboard Screenshot">
+            <p>Explore 3D models of the heart, lungs, brain, liver, kidney and take quizzes to test your knowledge.</p>
+        </div>
+        
+        <div class="section">
+            <h2>3D Model</h2>
+            <img src="{% static 'images/about_us_images/3Dmodel.png' %}" alt="3D Model Screenshot">
+            <p>Learn from 3D Model.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Quiz</h2>
+            <img src="{% static 'images/about_us_images/Quiz.png' %}" alt="Quiz Screenshot">
+            <p>Take Quiz to check your knowledge.</p>
+        </div>
+        </div>
 
     <!-- About Section -->
     <section class="about">
@@ -59,7 +99,7 @@
     <section class="cta-section">
         <div class="cta-content">
             <p>Ready to start your journey into human anatomy?</p>
-            <a href="#" class="btn-primary">Start Learning Now</a>
+            <a href="{% url 'login' %}" class="btn-primary">Start Learning Now</a>
         </div>
     </section>
 

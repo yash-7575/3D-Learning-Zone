@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSphere Chatbot</title>
+    <title>HealthSphere Chatbot</title>
+    <link rel="stylesheet" href="{% static 'chatbot.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            3D Learning Zone AI Assistant
+        </div>
+        <div class="chatbox" id="chatbox"></div>
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function sendMessage() {
+                var userMessage = $("#userInput").val().trim();
+                if (userMessage === "") return;
+
+                $("#chatbox").append("<div class='user-message'>" + userMessage + "</div>");
+                $("#userInput").val("");
+
+                $.ajax({
+                    type: "POST",
+                    url: "{% url 'chatbot_api' %}",
+                    data: { message: userMessage, csrfmiddlewaretoken: '{{ csrf_token }}' },
+                    success: function(response) {
+                        $("#chatbox").append("<div class='bot-message'>" + response.response + "</div>");
+                    },
+                    error: function(xhr) {
+                        $("#chatbox").append("<div class='error-message'>Error: " + xhr.responseText + "</div>");
+                    }
+                });
+            }
+
+            // Send message when clicking button
+            $("#sendBtn").click(sendMessage);
+
+            // Send message when pressing Enter
+            $("#userInput").keypress(function(event) {
+                if (event.which == 13) {  // Enter key
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

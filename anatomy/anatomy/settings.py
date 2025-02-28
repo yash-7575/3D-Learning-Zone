@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'authentication',
+    'chatbotapp'
 ]
 
 LOGIN_URL = 'login'
