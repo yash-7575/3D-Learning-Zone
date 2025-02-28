@@ -1,7 +1,7 @@
 from django.urls import path
 from authentication import views
 from authentication.views import leaderboard_brain
-from .views import submit_score_kidney, leaderboard_kidney, submit_score_liver, leaderboard_liver, submit_score_lungs, leaderboard_lungs, leaderboard
+from .views import submit_score_kidney, leaderboard_kidney, submit_score_liver, leaderboard_liver, submit_score_lungs, leaderboard_lungs
 urlpatterns = [
     path('register/', views.RegisterView, name='register'),
     path('login/', views.LoginView, name='login'),
@@ -12,10 +12,10 @@ urlpatterns = [
     path('liver-model/', views.LiverModelView, name='liver-model'),
     path('kidney-model/', views.KidneyModelView, name='kidney-model'),
     path('lungs-model/', views.LungsModelView, name='lungs-model'),
-    path('submit-score/', views.submit_score, name='submit_score'),
-    path('leaderboard/', leaderboard, name='leaderboard'),
-    path('submit_score_heart/', views.submit_score, name='submit_score_heart'),
-    path('leaderboard_brain/', leaderboard_brain, name='leaderboard_brain'),
+    # path('submit-score/', views.submit_score, name='submit_score'),
+    path('leaderboard_heart/', views.leaderboard_heart, name='leaderboard_heart'),
+    path('submit_score_heart/', views.submit_score_heart, name='submit_score_heart'),
+    path('leaderboard_brain/', views.leaderboard_brain, name='leaderboard_brain'),
     path('brain-quiz/', views.BrainQuizView, name='brain-quiz'),
     path('heart-quiz/', views.HeartQuizView, name='heart-quiz'),
     path('liver-quiz/', views.LiverQuizView, name='liver-quiz'),

@@ -24,13 +24,10 @@
             <td>{{ user.score }}</td>
             <td>{{ user.date }}</td>
         </tr>
-        {% endfor %}
+{% endfor %}
     </table>
-    {%endfor%}
-    <table>
 {% else %}
     <p>No scores available</p>  <!-- Debugging line -->
 {% endif %}
-    </table>
 </body>
 </html>

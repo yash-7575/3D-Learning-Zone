@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Leaderboard
+from .models import Leaderboard_heart
 from authentication.models import Leaderboard_brain
 from .models import Leaderboard_kidney
 from .models import Leaderboard_liver
@@ -66,7 +66,7 @@ def RegisterView(request):
         if user_data_has_error:
             return redirect('register')
         else:
-            new_user = User.objects.create_user(
+            User.objects.create_user(
                 first_name=first_name,
                 last_name=last_name,
                 email=email, 
@@ -105,7 +105,7 @@ def DashboardView(request):
 
 @csrf_exempt
 @login_required
-def submit_score(request):
+def submit_score_heart(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -119,7 +119,7 @@ def submit_score(request):
                 return JsonResponse({'error': 'Invalid score format'}, status=400)
 
             # Save to database
-            new_entry = Leaderboard.objects.create(username=username, score=score)
+            new_entry = Leaderboard_heart.objects.create(username=username, score=score)
             print(f"Saved score: {new_entry}")  # Debugging print
 
             return JsonResponse({'message': 'Score saved successfully'}, status=201)
@@ -133,19 +133,19 @@ def submit_score(request):
 
 
 @login_required
-def leaderboard(request):
+def leaderboard_heart(request):
     current_user = request.user.username  # Get the logged-in user's username
 
-    # Get the logged-in user's score from the Leaderboard_liver model
-    user_score = Leaderboard.objects.filter(username=current_user).first()
+    # Get the logged-in user's score from the Leaderboard model
+    user_score = Leaderboard_heart.objects.filter(username=current_user).first()
 
     # Get the top 10 scores for the leaderboard
-    top_scores = Leaderboard.objects.order_by('-score')[:10]
+    top_scores = Leaderboard_heart.objects.order_by('-score')[:10]
 
     print("Top Scores:", top_scores)  # Debugging line
     print("User Score:", user_score)  # Debugging line
 
-    return render(request, 'leaderboard_liver.html', {
+    return render(request, 'leaderboard_heart.html', {
         "user_score": user_score,
         "top_scores": top_scores
     })
